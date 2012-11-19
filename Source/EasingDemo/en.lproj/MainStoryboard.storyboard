@@ -58,7 +58,6 @@
         <class className="EDViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/EDViewController.h"/>
             <relationships>
-                <relationship kind="action" name="sliderValueChanged:"/>
                 <relationship kind="outlet" name="carImage" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="positionPercentField" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="slider" candidateClass="UISlider"/>

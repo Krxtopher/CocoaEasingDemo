@@ -65,7 +65,7 @@
 	
 	self.sliderPercentField.text = [NSString stringWithFormat:@"%.1f%%", sliderPercent * 100];
 	self.positionPercentField.text = [NSString stringWithFormat:@"%.1f%%", positionPercent * 100];
-
+    
 }
 
 @end
