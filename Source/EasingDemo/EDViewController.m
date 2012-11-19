@@ -28,11 +28,11 @@
 {
     [super viewDidLoad];
 	
-	self.carImageY = self.carImage.center.y;
-	self.carImageMinX = self.carImage.center.x;
-	self.carImageMaxX = self.carImageMinX + 205;
+    self.carImageY = self.carImage.center.y;
+    self.carImageMinX = self.carImage.center.x;
+    self.carImageMaxX = self.carImageMinX + 205;
 	
-	[self displayPercentageValues];
+    [self displayPercentageValues];
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,29 +43,28 @@
 
 - (IBAction)sliderValueChanged:(id)sender
 {
-	[self updateCarPosition];
-	[self displayPercentageValues];
+    [self updateCarPosition];
+    [self displayPercentageValues];
 }
 
 - (void)updateCarPosition
 {
-	CGFloat sliderPercent = self.slider.value;
+    CGFloat sliderPercent = self.slider.value;
 	
-	CGFloat carX = [QuadraticEasing easeInOutValueAtPercent:sliderPercent
-													   from:self.carImageMinX
-														 to:self.carImageMaxX];
+    CGFloat carX = [QuadraticEasing easeInOutValueAtPercent:sliderPercent
+                                                       from:self.carImageMinX
+                                                         to:self.carImageMaxX];
 	
-	self.carImage.center = CGPointMake(carX, self.carImageY);
+    self.carImage.center = CGPointMake(carX, self.carImageY);
 }
 
 - (void)displayPercentageValues
 {
-	CGFloat sliderPercent = self.slider.value;
-	CGFloat positionPercent = [QuadraticEasing easeInOutValueAtPercent:sliderPercent];
+    CGFloat sliderPercent = self.slider.value;
+    CGFloat positionPercent = [QuadraticEasing easeInOutValueAtPercent:sliderPercent];
 	
-	self.sliderPercentField.text = [NSString stringWithFormat:@"%.1f%%", sliderPercent * 100];
-	self.positionPercentField.text = [NSString stringWithFormat:@"%.1f%%", positionPercent * 100];
-    
+    self.sliderPercentField.text = [NSString stringWithFormat:@"%.1f%%", sliderPercent * 100];
+    self.positionPercentField.text = [NSString stringWithFormat:@"%.1f%%", positionPercent * 100];
 }
 
 @end
